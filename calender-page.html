@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+             
+            h1 {
+                margin-bottom: 2rem;
+                color: #c00e7f;
+                transition: all 0.3s;
+            }
+
+            h4 {
+                margin-bottom: 2rem;
+                color: purple;
+            }
+
+            button {
+                color: palevioletred;
+                background-color: pink;
+            }
+
+            .calender-container{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            #calender{
+                padding: 20px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>When are you free?</h1>
+        <h4>(select a date)</h4>
+        <div class="calender-container">
+            <input type="date" id="calender">
+            <button id="okButton">OK</button>
+        </div>
+
+        <script>
+            document.getElementById('okButton').addEventListener('click',()=>{
+                window.location.href='image-selection-1.html';
+            });
+        </script>
+    </body>
+</html>

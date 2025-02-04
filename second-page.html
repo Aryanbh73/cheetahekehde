@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .wrapper {
+                text-align: center;
+            }
+
+            h1 {
+                margin-bottom: 2rem;
+                color: #c00e7f;
+                transition: all 0.3s;
+            }
+
+            .gif {
+                height: 70%;
+                width: 80%;
+            }
+
+            h3 {
+                margin-bottom: 2rem;
+                color: rgb(240, 49, 81);
+            }
+
+            button{
+                padding: 15px 30px;
+                font-size: 1.2rem;
+                margin: 20px;
+                color: #5f0646;
+                background-color: rgb(232, 246, 109);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 id="thank">Thank You!!!</h1>
+            <img class="gif" alt="gif" src="https://media.giphy.com/media/XdPmiW1hrApwqO1h69/giphy.gif?cid=ecf05e47t2iufni2ijjffnk82ol1b5fu8ig7tbxi9oxjxfej&ep=v1_gifs_search&rid=giphy.gif&ct=g"/>
+            <h3 id="well">Not over yet!</h3>
+        <button id="notOverButton">Click Here!!!</button>
+        </div>
+        <script>
+            document.getElementById('notOverButton').addEventListener('click',()=>{
+                window.location.href='calender-page.html';
+            });
+        </script>
+    </body>
+</html>

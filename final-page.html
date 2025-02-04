@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(135deg,#f5d5ff,#b8e1ff);
+                font-family: 'Arial Rounded MT Bold', sans-serif;
+                overflow: hidden;
+            }
+
+            .title {
+                font-size: 3.5rem;
+                color: #ff69b4;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+                margin-bottom: 2rem;
+                animation: float 3s ease-in-out infinite;
+            }
+
+            .vase-container {
+                position: relative;
+                height: 500px;
+            }
+
+            .vase {
+                width: 200px;
+                height: 300px;
+                background: #e0a845;
+                border-radius: 10px 10px 40px 40px;
+                position: relative;
+                animation: sway 5s ease-in-out infinite;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+
+            .flowers {
+                position: absolute;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .flower{
+                position: absolute;
+                animation: float 4s ease-in-out infinite;
+            }
+
+            .flower:nth-child(1) {left: -30px; animation-delay: 0.2s;}
+            .flower:nth-child(2) {left: 0px; animation-delay: 0.5s;}
+            .flower:nth-child(3) {left: 30px; animation-delay: 0.8s;}
+
+            .petals {
+                width: 40px;
+                height: 40px;
+                background: #ff69b4;
+                border-radius: 50%;
+                position: relative;
+                animation: rotate 10s linear infinite;
+            }
+
+            .petal {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background: #ff99cc;
+                border-radius: 50%;
+            }
+
+            .petal:nth-child(1) {top: -5px; left: 12px;}
+            .petal:nth-child(2) {top: 12px; right: -5px;}
+            .petal:nth-child(3) {bottom: -5px; left: 12px;}
+            .petal:nth-child(4) {top: 12px; left: -5px;}
+
+            @keyframes sway {
+                0%, 100% {transform: rotate(-2deg);}
+                50% {transform: rotate(2deg);}
+            }
+
+            @keyframes float {
+                0%, 100% {transform: translateY(0);}
+                50% {transform: translateY(-20px);}
+            }
+
+            @keyframes rotate {
+                0% {transform: rotate(0deg);}
+                100% {transform: rotate(360deg);}
+            }
+
+            .message {
+                position: absolute;
+                bottom: 20%;
+                font-size: 1.5rem;
+                color: #666;
+                animation: float 3s ease-in-out infinite;
+            }
+
+            @keyframes fade {
+                0%, 100% {opacity: 0.7;}
+                50% {opacity: 1;}
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="title">DHANYAWAD!!!</h1>
+        <div class="vase-container">
+            <div class="vase">
+                <div class="flowers">
+                    <div class="flower" style="transform: scale(0.8);">
+                        <div class="petals">
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                        </div>
+                    </div>
+                    <div class="flower" style="transform: scale(1.1);">
+                        <div class="petals">
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                        </div>
+                    </div>
+                    <div class="flower" style="transform: scale(0.9);">
+                        <div class="petals">
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                            <div class="petal"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="message">Chalo phir milte hain:)</p>
+
+        <script>
+            setTimeout(()=>{
+                const colors =['#ff69b4','#ff99cc','#ffd700'];
+                for(let i=0;i<50;i++){
+                    const confetti=document.createElement('div');
+                    confetti.style.cssText=`
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        background: ${colors[Math.floor(Math.random()*colors.length)]};
+                        border-radius: 50%;
+                        top: ${Math.random()*100}vh;
+                        left: ${Math.random()*100}vw;
+                        Animation: float ${2+Math.random()*3}s ease-in infinite;
+                        `;
+                        document.body.appendChild(confetti);
+                }
+            },1000);
+        </script>
+    </body>
+</html>
